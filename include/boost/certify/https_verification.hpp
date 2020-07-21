@@ -43,15 +43,15 @@ namespace boost
 namespace certify
 {
 
-template<class NextLayer>
+template<class Stream>
 void
-set_server_hostname(asio::ssl::stream<NextLayer>& stream,
+set_server_hostname(Stream& stream,
                     string_view hostname,
                     system::error_code& ec);
 
-template<class NextLayer>
+template<class Stream>
 void
-set_server_hostname(asio::ssl::stream<NextLayer>& stream, string_view hostname);
+set_server_hostname(Stream& stream, string_view hostname);
 
 void
 enable_native_https_server_verification(asio::ssl::context& context);
