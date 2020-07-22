@@ -13,7 +13,7 @@ string_view
 sni_hostname(Stream const& stream)
 {
     auto handle =
-      const_cast<asio::ssl::stream<AsyncStream>&>(stream).native_handle();
+      const_cast<Stream&>(stream).native_handle();
     auto* hostname = SSL_get_servername(handle, TLSEXT_NAMETYPE_host_name);
     if (hostname == nullptr)
         return string_view{};

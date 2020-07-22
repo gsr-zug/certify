@@ -2,3 +2,6 @@ build
 .directory
 CMakeSettings.json
 .vs
+.vscode
+.idea
+cmake-build*
